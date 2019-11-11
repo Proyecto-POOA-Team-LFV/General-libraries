@@ -7,7 +7,6 @@ public abstract class Entity {
     private double height;
 
     public Entity(double x, double y, double width, double height) {
-        /*Pipo ya no vive*/
 
         this.x = x;
         this.y = y;
