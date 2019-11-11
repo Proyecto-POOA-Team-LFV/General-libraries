@@ -1,5 +1,8 @@
+package entidades;
 
-public abstract class Entity {
+import java.io.Serializable;
+
+public abstract class Entity implements Serializable {
 
     private double x;
     private double y;

@@ -1,16 +1,15 @@
+package entidades;
 
-public abstract class SoftEntity extends VisualEntity {
-
-    /* Nombre *Work In Progress* */
+public abstract class IsometricEntity extends Entity {
 
     private double hitboxX;
     private double hitboxY;
     private double hitboxWidth;
     private double hitboxHeight;
 
-    public SoftEntity(double x, double y, double width, double height, String url) {
+    public IsometricEntity(double x, double y, double width, double height) {
 
-        super(x, y, width, height, url);
+        super(x, y, width, height);
 
         this.hitboxX = x;
         this.hitboxY = y;
@@ -18,19 +17,19 @@ public abstract class SoftEntity extends VisualEntity {
         this.hitboxHeight = height;
     }
 
-    public SoftEntity(double x, double y, double width, double height, String url, double yScale) {
+    public IsometricEntity(double x, double y, double width, double height, double hitboxSize) {
 
-        super(x, y, width, height, url);
+        super(x, y, width, height);
 
-        if(yScale > 0 && yScale <= 1) {
+        if(hitboxSize > 0 && hitboxSize <= 1) {
             /*  Define el tamaño que ocupa la caja de colisiones
                 de la entidad desde su punto mas bajo para arriba.
             */
 
             this.hitboxX = x;
-            this.hitboxY = (y + height) - height/yScale;
+            this.hitboxY = (y + height) - height/hitboxSize;
             this.hitboxWidth = width;
-            this.hitboxHeight = height/yScale;
+            this.hitboxHeight = height/hitboxSize;
         } else {
             /*
                 Se define una caja de colisiones de la mitad hacia abajo
@@ -43,10 +42,10 @@ public abstract class SoftEntity extends VisualEntity {
         }
     }
 
-    public SoftEntity(double x, double y, double width, double height, String url,
-                      double hitboxX, double hitboxY, double hitboxWidth, double hitboxHeight) {
+    public IsometricEntity(double x, double y, double width, double height,
+                           double hitboxX, double hitboxY, double hitboxWidth, double hitboxHeight) {
 
-        super(x, y, width, height, url);
+        super(x, y, width, height);
 
         /*
             Define el tamaño que ocupa la caja de colisiones
