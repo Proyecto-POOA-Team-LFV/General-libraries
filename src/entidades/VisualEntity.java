@@ -5,6 +5,10 @@ import javafx.scene.image.Image;
 public abstract class VisualEntity extends Entity {
 
     private Image sprite;
+    /*
+
+    Kore ga requiem... da
+     */
 
     public VisualEntity(double x, double y, double width, double height) {
         super(x, y, width, height);
